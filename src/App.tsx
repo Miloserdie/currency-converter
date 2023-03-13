@@ -1,8 +1,27 @@
 import './App.scss';
 import {getCurrencySymbolsReq} from "./api/currencyApi";
 import {PRIMARY_CURRENCY_LIST} from "./const";
+import { useState } from 'react';
+import {SyntheticEvent} from "react";
+import {useEffect} from "react";
+import Header from './components/Header/index'
 
-function App() {
+type ActiveFormType = {
+    currency: string,
+    value?: number
+}
+
+const App = () => {
+    const [leftForm, setLeftForm] = useState<ActiveFormType>({
+        currency: 'USD',
+        value: 0
+    });
+
+    const [rightForm, setRightForm] = useState<ActiveFormType>({
+        currency: 'UAH',
+        value: 0
+    });
+
   const aaa = async () => {
     const {symbols} = await getCurrencySymbolsReq();
 
@@ -17,13 +36,8 @@ function App() {
   void aaa()
 
   return (
-    <div className="App">
-        <div>
-
-        </div>
-        <div>
-
-        </div>
+    <div className={'wrapper'}>
+       <Header />
     </div>
   );
 }
