@@ -1,0 +1,78 @@
+.currencies {
+  padding-top: 100px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__side {
+    background: #3a3a3a;
+    border: 1px solid #3a3a3a;
+    margin-right: 10px;
+    height: 50px;
+    display: flex;
+    flex-basis: 280px;
+    flex-shrink: 1;
+    border-radius: 15px;
+    padding-right: 5px;
+
+    &:has(input:focus),
+    &:has(select:focus){
+      border: 1px solid #8a8a8a;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__input {
+    background: none;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+
+    &::placeholder {
+      color: #ffffff;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__select {
+    background: none;
+    outline: none;
+    border: none;
+    padding: 5px;
+    color: #ffffff;
+    height: 100%;
+  }
+
+  &__option {
+    background: #3a3a3a;
+    outline: none;
+    border: none;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .currencies {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__side {
+      margin: 0 0 10px 0;
+      //margin: 0 auto;
+    }
+  }
+}

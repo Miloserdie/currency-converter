@@ -1,19 +1,24 @@
 import axios from "axios";
+import {PRIMARY_CURRENCY_LIST} from "../const";
 
 const currencyUrl = `https://api.apilayer.com/exchangerates_data`;
 
-type Symbol = {
-    [key: string]: string
+export type Rates = {
+    [key: string]: number
 }
 
 type CurrencyData = {
     success: boolean
-    symbols: Symbol
+    rates: Rates
 }
 
 export const getCurrencySymbolsReq = async (): Promise<CurrencyData> => {
     try {
-        const {data} = await axios.get(`${currencyUrl}/symbols`, {
+        const {data} = await axios.get(`${currencyUrl}/latest`, {
+            params: {
+                symbols: PRIMARY_CURRENCY_LIST.toString(),
+                base: 'UAH',
+            },
             headers: {
                 'apikey': process.env.REACT_APP_CURRENCY_API_KEY
             }

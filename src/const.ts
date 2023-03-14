@@ -1,1 +1,1 @@
-export const PRIMARY_CURRENCY_LIST = [`UAH`, 'USD', 'EUR'];
+export const PRIMARY_CURRENCY_LIST = [`UAH`, 'USD', 'EUR' , 'PLN'];

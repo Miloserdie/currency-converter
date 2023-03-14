@@ -1,10 +1,20 @@
 .wrapper {
   min-height: 100vh;
   background: #626262;
+  padding: 0 10px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     height: 100%;
     margin: 0 auto;
+}
+
+.loading {
+  background: #626262;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
